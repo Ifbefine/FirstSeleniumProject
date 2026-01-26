@@ -13,12 +13,13 @@ import java.time.Duration;
 public class CreateAccountTests extends TestBase{
 @Test
     public void newRegisterPositiveTest() throws InterruptedException {
+    int i=(int) ((System.currentTimeMillis()/1000%3600));
     click(By.className("ico-register"));
     type(By.id("FirstName"),"Vladimir");
     Thread.sleep(1200);
     type(By.id("LastName"),"Dinu");
     Thread.sleep(1200);
-    type(By.id("Email"),"Test20031@gmail.com");
+    type(By.id("Email"),newEmail());
     Thread.sleep(1200);
     type(By.id("Password"),"Abcd@12345678");
     Thread.sleep(1200);

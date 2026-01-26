@@ -1,0 +1,255 @@
+#
+# There is insufficient memory for the Java Runtime Environment to continue.
+# Native memory allocation (mmap) failed to map 264241152 bytes for G1 virtual space
+# Possible reasons:
+#   The system is out of physical RAM or swap space
+#   The process is running with CompressedOops enabled, and the Java Heap may be blocking the growth of the native heap
+# Possible solutions:
+#   Reduce memory load on the system
+#   Increase physical memory or swap space
+#   Check if swap backing store is full
+#   Decrease Java heap size (-Xmx/-Xms)
+#   Decrease number of Java threads
+#   Decrease Java thread stack sizes (-Xss)
+#   Set larger code cache with -XX:ReservedCodeCacheSize=
+#   JVM is running with Unscaled Compressed Oops mode in which the Java heap is
+#     placed in the first 4GB address space. The Java Heap base address is the
+#     maximum limit for the native heap growth. Please use -XX:HeapBaseMinAddress
+#     to set the Java Heap base and to place the Java Heap above 4GB virtual address.
+# This output file may be truncated or incomplete.
+#
+#  Out of Memory Error (os_windows.cpp:3603), pid=27472, tid=25480
+#
+# JRE version:  (21.0.6+8) (build )
+# Java VM: Java HotSpot(TM) 64-Bit Server VM (21.0.6+8-LTS-188, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, windows-amd64)
+# No core dump will be written. Minidumps are not enabled by default on client versions of Windows
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dorg.gradle.internal.worker.tmpdir=C:\QA\FirstSeleniumProject\build\tmp\test\work -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=MD -Duser.language=ru -Duser.variant -ea worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 14'
+
+Host: 12th Gen Intel(R) Core(TM) i5-12450H, 12 cores, 15G,  Windows 11 , 64 bit Build 26100 (10.0.26100.7623)
+Time: Mon Jan 26 23:37:51 2026  Windows 11 , 64 bit Build 26100 (10.0.26100.7623) elapsed time: 2.029545 seconds (0d 0h 0m 2s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x000002301646ef10):  JavaThread "Unknown thread" [_thread_in_vm, id=25480, stack(0x0000004f26700000,0x0000004f26800000) (1024K)]
+
+Stack: [0x0000004f26700000,0x0000004f26800000]
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+V  [jvm.dll+0x6ca6d9]
+V  [jvm.dll+0x854f51]
+V  [jvm.dll+0x85747e]
+V  [jvm.dll+0x857b53]
+V  [jvm.dll+0x27dcc6]
+V  [jvm.dll+0x6c6e55]
+V  [jvm.dll+0x6bb9da]
+V  [jvm.dll+0x35393a]
+V  [jvm.dll+0x35b596]
+V  [jvm.dll+0x3adefe]
+V  [jvm.dll+0x3ae1a8]
+V  [jvm.dll+0x327cbc]
+V  [jvm.dll+0x32881b]
+V  [jvm.dll+0x81e309]
+V  [jvm.dll+0x3babe1]
+V  [jvm.dll+0x807658]
+V  [jvm.dll+0x44fdae]
+V  [jvm.dll+0x4519a1]
+C  [jli.dll+0x52a3]
+C  [ucrtbase.dll+0x37b0]
+C  [KERNEL32.DLL+0x2e8d7]
+C  [ntdll.dll+0x8c53c]
+
+
+---------------  P R O C E S S  ---------------
+
+Threads class SMR info:
+_java_thread_list=0x00007ffb136fcc08, length=0, elements={
+}
+
+Java Threads: ( => current thread )
+Total: 0
+
+Other Threads:
+  0x0000023016497d50 WorkerThread "GC Thread#0"                     [id=26816, stack(0x0000004f26800000,0x0000004f26900000) (1024K)]
+  0x000002301649cdb0 ConcurrentGCThread "G1 Main Marker"            [id=24396, stack(0x0000004f26900000,0x0000004f26a00000) (1024K)]
+  0x000002301649e730 WorkerThread "G1 Conc#0"                       [id=25632, stack(0x0000004f26a00000,0x0000004f26b00000) (1024K)]
+
+[error occurred during error reporting (printing all threads), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffb12e6a427]
+VM state: not at safepoint (not fully initialized)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x00007ffb1376df98] Heap_lock - owner thread: 0x000002301646ef10
+
+Heap address: 0x00000000e0000000, size: 512 MB, Compressed Oops mode: 32-bit
+
+CDS archive(s) mapped at: [0x0000000000000000-0x0000000000000000-0x0000000000000000), size 0, SharedBaseAddress: 0x0000000800000000, ArchiveRelocationMode: 1.
+Narrow klass base: 0x0000000000000000, Narrow klass shift: 0, Narrow klass range: 0x0
+
+GC Precious Log:
+ CardTable entry size: 512
+ Card Set container configuration: InlinePtr #cards 5 size 8 Array Of Cards #cards 12 size 40 Howl #buckets 4 coarsen threshold 1843 Howl Bitmap #cards 512 size 80 coarsen threshold 460 Card regions per heap region 1 cards per card region 2048
+
+Heap:
+ garbage-first heap   total 0K, used 0K [0x00000000e0000000, 0x0000000100000000)
+  region size 1024K, 0 young (0K), 0 survivors (0K)
+
+[error occurred during error reporting (printing heap information), id 0xc0000005, EXCEPTION_ACCESS_VIOLATION (0xc0000005) at pc=0x00007ffb132536a9]
+GC Heap History (0 events):
+No events
+
+Dll operation events (1 events):
+Event: 0.009 Loaded shared library C:\Program Files\Java\jdk-21\bin\java.dll
+
+Deoptimization events (0 events):
+No events
+
+Classes loaded (0 events):
+No events
+
+Classes unloaded (0 events):
+No events
+
+Classes redefined (0 events):
+No events
+
+Internal exceptions (0 events):
+No events
+
+ZGC Phase Switch (0 events):
+No events
+
+VM Operations (0 events):
+No events
+
+Events (0 events):
+No events
+
+
+Dynamic libraries:
+0x00007ff621b60000 - 0x00007ff621b70000 	C:\Program Files\Java\jdk-21\bin\java.exe
+0x00007ffbf1be0000 - 0x00007ffbf1e47000 	C:\WINDOWS\SYSTEM32\ntdll.dll
+0x00007ffbf1060000 - 0x00007ffbf1129000 	C:\WINDOWS\System32\KERNEL32.DLL
+0x00007ffbeede0000 - 0x00007ffbef1cf000 	C:\WINDOWS\System32\KERNELBASE.dll
+0x00007ffbef3a0000 - 0x00007ffbef4eb000 	C:\WINDOWS\System32\ucrtbase.dll
+0x00007ffbd8ad0000 - 0x00007ffbd8ae9000 	C:\Program Files\Java\jdk-21\bin\jli.dll
+0x00007ffbe4100000 - 0x00007ffbe411b000 	C:\Program Files\Java\jdk-21\bin\VCRUNTIME140.dll
+0x00007ffbf1280000 - 0x00007ffbf1334000 	C:\WINDOWS\System32\ADVAPI32.dll
+0x00007ffbf1af0000 - 0x00007ffbf1b99000 	C:\WINDOWS\System32\msvcrt.dll
+0x00007ffbefb40000 - 0x00007ffbefbe6000 	C:\WINDOWS\System32\sechost.dll
+0x00007ffbf1580000 - 0x00007ffbf1698000 	C:\WINDOWS\System32\RPCRT4.dll
+0x00007ffbf0730000 - 0x00007ffbf08f5000 	C:\WINDOWS\System32\USER32.dll
+0x00007ffbcf970000 - 0x00007ffbcfc03000 	C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.7309_none_3e05feeae336a044\COMCTL32.dll
+0x00007ffbef4f0000 - 0x00007ffbef517000 	C:\WINDOWS\System32\win32u.dll
+0x00007ffbf1360000 - 0x00007ffbf138b000 	C:\WINDOWS\System32\GDI32.dll
+0x00007ffbef270000 - 0x00007ffbef39c000 	C:\WINDOWS\System32\gdi32full.dll
+0x00007ffbef690000 - 0x00007ffbef733000 	C:\WINDOWS\System32\msvcp_win.dll
+0x00007ffbe2cf0000 - 0x00007ffbe2cfb000 	C:\WINDOWS\SYSTEM32\VERSION.dll
+0x00007ffbf1390000 - 0x00007ffbf13c1000 	C:\WINDOWS\System32\IMM32.DLL
+0x00007ffbe72c0000 - 0x00007ffbe72cc000 	C:\Program Files\Java\jdk-21\bin\vcruntime140_1.dll
+0x00007ffbc1a90000 - 0x00007ffbc1b1e000 	C:\Program Files\Java\jdk-21\bin\msvcp140.dll
+0x00007ffb12b30000 - 0x00007ffb1384a000 	C:\Program Files\Java\jdk-21\bin\server\jvm.dll
+0x00007ffbf0500000 - 0x00007ffbf0574000 	C:\WINDOWS\System32\WS2_32.dll
+0x00007ffbee4a0000 - 0x00007ffbee4fe000 	C:\WINDOWS\SYSTEM32\POWRPROF.dll
+0x00007ffbe2c70000 - 0x00007ffbe2ca5000 	C:\WINDOWS\SYSTEM32\WINMM.dll
+0x00007ffbee480000 - 0x00007ffbee494000 	C:\WINDOWS\SYSTEM32\UMPDC.dll
+0x00007ffbedae0000 - 0x00007ffbedafb000 	C:\WINDOWS\SYSTEM32\kernel.appcore.dll
+0x00007ffbe4130000 - 0x00007ffbe413a000 	C:\Program Files\Java\jdk-21\bin\jimage.dll
+0x00007ffbec250000 - 0x00007ffbec492000 	C:\WINDOWS\SYSTEM32\DBGHELP.DLL
+0x00007ffbf0170000 - 0x00007ffbf04f6000 	C:\WINDOWS\System32\combase.dll
+0x00007ffbf1430000 - 0x00007ffbf1506000 	C:\WINDOWS\System32\OLEAUT32.dll
+0x00007ffbc6280000 - 0x00007ffbc62bc000 	C:\WINDOWS\SYSTEM32\dbgcore.DLL
+0x00007ffbeed30000 - 0x00007ffbeedd5000 	C:\WINDOWS\System32\bcryptPrimitives.dll
+0x00007ffbd7570000 - 0x00007ffbd758f000 	C:\Program Files\Java\jdk-21\bin\java.dll
+
+dbghelp: loaded successfully - version: 4.0.5 - missing functions: none
+symbol engine: initialized successfully - sym options: 0x614 - pdb path: .;C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\SYSTEM32;C:\WINDOWS\WinSxS\amd64_microsoft.windows.common-controls_6595b64144ccf1df_6.0.26100.7309_none_3e05feeae336a044;C:\Program Files\Java\jdk-21\bin\server
+
+VM Arguments:
+jvm_args: -Dorg.gradle.internal.worker.tmpdir=C:\QA\FirstSeleniumProject\build\tmp\test\work -Xmx512m -Dfile.encoding=UTF-8 -Duser.country=MD -Duser.language=ru -Duser.variant -ea 
+java_command: worker.org.gradle.process.internal.worker.GradleWorkerMain 'Gradle Test Executor 14'
+java_class_path (initial): C:\\QA2\\PhonebookUI\\caches\\8.14\\workerMain\\gradle-worker.jar;C:\\QA\\FirstSeleniumProject\\build\\classes\\java\\test;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-java\\4.40.0\\2cc38c8dbef9d6e8774f05c2d2e8088180858ed4\\selenium-java-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.testng\\testng\\7.11.0\\c75ee639e6fc9c0a406d32608d532d9ee9341941\\testng-7.11.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.github.bonigarcia\\webdrivermanager\\5.7.0\\e61b8c534853f21d8a1545c19e4eccc8b26e538f\\webdrivermanager-5.7.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-chrome-driver\\4.40.0\\f0e2a34397e18067f6d29a2b04c0fe299b506001\\selenium-chrome-driver-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-devtools-v142\\4.40.0\\b1bf4b9d2c83bf2606bf3df2c09088ec04f22fb1\\selenium-devtools-v142-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-devtools-v143\\4.40.0\\848259e553bd9e239d06e23c9a9e92d03c021ff0\\selenium-devtools-v143-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-devtools-v144\\4.40.0\\7a50eb6ba721a76dac19497dbd3b39fa58598c2d\\selenium-devtools-v144-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-edge-driver\\4.40.0\\9faf5b39b68925ea84444a5a9b4269761b3e54b9\\selenium-edge-driver-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-firefox-driver\\4.40.0\\8bdd9f01c690e1368a1c33ee76584c9a856f8021\\selenium-firefox-driver-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-ie-driver\\4.40.0\\40b8d878f3fe02b43a360574e2b067d605666d8c\\selenium-ie-driver-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-safari-driver\\4.40.0\\129277ea8790705e4f7ad5484bff148106d84ee2\\selenium-safari-driver-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-support\\4.40.0\\ca4697a1c029fe63626a8cff9a15de5e4d25d406\\selenium-support-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-chromium-driver\\4.40.0\\1f62082ed7e2f97b1bf8cf875d1ecedbfa83103e\\selenium-chromium-driver-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-remote-driver\\4.40.0\\ae451b8edf38f3e63754b6765f672fb9c09a7792\\selenium-remote-driver-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-manager\\4.40.0\\6406890f35d137cc53dbc7ed9e359902a3ddf7e8\\selenium-manager-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-http\\4.40.0\\3fdf52d84ec6606295e5b17ee84f3a8636b1078e\\selenium-http-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-json\\4.40.0\\ed2ec21379b305432724dc04bfabcef34672a3f\\selenium-json-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-os\\4.40.0\\d6edd474f2dac25168382cf68322b116593f8ade\\selenium-os-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.seleniumhq.selenium\\selenium-api\\4.40.0\\8b3bd8765af31bfe863454a6a9197e3606766b80\\selenium-api-4.40.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.github.docker-java\\docker-java-transport-httpclient5\\3.3.5\\73a916e8931e0d09c8e02ab5e90f38db80dcd2ff\\docker-java-transport-httpclient5-3.3.5.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.apache.httpcomponents.client5\\httpclient5\\5.2.1\\c900514d3446d9ce5d9dbd90c21192048125440\\httpclient5-5.2.1.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.github.docker-java\\docker-java\\3.3.5\\3f1cdd5f182c53ffd15d7553b8b3d1c96e74ae1b\\docker-java-3.3.5.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.github.docker-java\\docker-java-core\\3.3.5\\d30fb6b25c0bde6a0f0f25bcb2cde12e23a44422\\docker-java-core-3.3.5.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.slf4j\\jcl-over-slf4j\\1.7.30\\cd92524ea19d27e5b94ecd251e1af729cffdfe15\\jcl-over-slf4j-1.7.30.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.github.docker-java\\docker-java-api\\3.3.5\\c9cd924da119835a8da0ca43bfa37b740247c029\\docker-java-api-3.3.5.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.slf4j\\slf4j-api\\2.0.16\\172931663a09a1fa515567af5fbef00897d3c04\\slf4j-api-2.0.16.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.jcommander\\jcommander\\1.83\\c342a2ad17ec08db105146e27c7ba9c535c9bb46\\jcommander-1.83.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.webjars\\jquery\\3.7.1\\42088e652462c40a369b64d87e18e825644acfab\\jquery-3.7.1.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.google.code.gson\\gson\\2.10.1\\b3add478d4382b78ea20b1671390a858002feb6c\\gson-2.10.1.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.brotli\\dec\\0.1.2\\c26a897ae0d524809eef1c786cc6183b4ddcc3b\\dec-0.1.2.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.apache.commons\\commons-compress\\1.26.0\\659feffdd12280201c8aacb8f7be94f9a883c824\\commons-compress-1.26.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.apache.commons\\commons-lang3\\3.14.0\\1ed471194b02f2c6cb734a0cd6f6f107c673afae\\commons-lang3-3.14.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.google.guava\\guava\\33.5.0-jre\\8699de25f2f979108d6c1b804a7ba38cda1116bc\\guava-33.5.0-jre.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.jspecify\\jspecify\\1.0.0\\7425a601c1c7ec76645a78d22b8c6a627edee507\\jspecify-1.0.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.google.auto.service\\auto-service-annotations\\1.1.1\\da12a15cd058ba90a0ff55357fb521161af4736d\\auto-service-annotations-1.1.1.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.opentelemetry\\opentelemetry-exporter-logging\\1.58.0\\b3481db6c64972ca8a163f228500f6291dc7a68\\opentelemetry-exporter-logging-1.58.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.opentelemetry\\opentelemetry-sdk-extension-autoconfigure\\1.58.0\\bc5512deac0f5580c57f90e6dbe23ad445867809\\opentelemetry-sdk-extension-autoconfigure-1.58.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.opentelemetry\\opentelemetry-sdk-extension-autoconfigure-spi\\1.58.0\\1863312f608d1bd0c14fbde747a4a463015ac4dc\\opentelemetry-sdk-extension-autoconfigure-spi-1.58.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.opentelemetry\\opentelemetry-sdk\\1.58.0\\8fa186c881713e996c61196a338ebb940886022b\\opentelemetry-sdk-1.58.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.opentelemetry\\opentelemetry-sdk-trace\\1.58.0\\282fe44a99a59b83595186de9026b223b0b8f34f\\opentelemetry-sdk-trace-1.58.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.opentelemetry\\opentelemetry-sdk-metrics\\1.58.0\\932972a00bb15a8c3a27c4d57870ad9fb7a915eb\\opentelemetry-sdk-metrics-1.58.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.opentelemetry\\opentelemetry-sdk-logs\\1.58.0\\1728a1f8bec376d9d86b28b875a7640f614aa99\\opentelemetry-sdk-logs-1.58.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.opentelemetry\\opentelemetry-sdk-common\\1.58.0\\bc3b1a245e6f863dde963d2c67a9a3547d3ee803\\opentelemetry-sdk-common-1.58.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.opentelemetry\\opentelemetry-api\\1.58.0\\6d2be0c909cfe6c9e0d9349d4b1f5d7edf4f57ee\\opentelemetry-api-1.58.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.opentelemetry\\opentelemetry-context\\1.58.0\\2df0b731c3c7c461816310891885777d424a1799\\opentelemetry-context-1.58.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\net.bytebuddy\\byte-buddy\\1.18.4\\663e2e22268f372e3209f9e212a43ca1c150ab43\\byte-buddy-1.18.4.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.github.docker-java\\docker-java-transport\\3.3.5\\4aa7e97c14ed1f2ca62029bf1ea8467f6ebf48d9\\docker-java-transport-3.3.5.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\net.java.dev.jna\\jna\\5.13.0\\1200e7ebeedbe0d10062093f32925a912020e747\\jna-5.13.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\commons-io\\commons-io\\2.15.1\\f11560da189ab563a5c8e351941415430e9304ea\\commons-io-2.15.1.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.apache.httpcomponents.core5\\httpcore5-h2\\5.2\\698bd8c759ccc7fd7398f3179ff45d0e5a7ccc16\\httpcore5-h2-5.2.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.apache.httpcomponents.core5\\httpcore5\\5.2\\ab7d251b8dfa3f2878f1eefbcca0e1fc0ebeba27\\httpcore5-5.2.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.google.guava\\failureaccess\\1.0.3\\aeaffd00d57023a2c947393ed251f0354f0985fc\\failureaccess-1.0.3.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.google.guava\\listenablefuture\\9999.0-empty-to-avoid-conflict-with-guava\\b421526c5f297295adef1c886e5246c39d4ac629\\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.google.errorprone\\error_prone_annotations\\2.41.0\\4381275efdef6ddfae38f002c31e84cd001c97f0\\error_prone_annotations-2.41.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.google.j2objc\\j2objc-annotations\\3.1\\a892ca9507839bbdb900d64310ac98256cab992f\\j2objc-annotations-3.1.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\io.opentelemetry\\opentelemetry-common\\1.58.0\\b010feca635862d4e0cc65ffdacaa2ce2cb764f1\\opentelemetry-common-1.58.0.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.fasterxml.jackson.core\\jackson-databind\\2.10.3\\aae92628b5447fa25af79871ca98668da6edd439\\jackson-databind-2.10.3.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.bouncycastle\\bcpkix-jdk18on\\1.76\\10c9cf5c1b4d64abeda28ee32fbade3b74373622\\bcpkix-jdk18on-1.76.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.fasterxml.jackson.core\\jackson-annotations\\2.10.3\\f63b3b1da563767d04d2e4d3fc1ae0cdeffebe7\\jackson-annotations-2.10.3.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\com.fasterxml.jackson.core\\jackson-core\\2.10.3\\f7ee7b55c7d292ac72fbaa7648c089f069c938d2\\jackson-core-2.10.3.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.bouncycastle\\bcutil-jdk18on\\1.76\\8c7594e651a278bcde18e038d8ab55b1f97f4d31\\bcutil-jdk18on-1.76.jar;C:\\QA2\\PhonebookUI\\caches\\modules-2\\files-2.1\\org.bouncycastle\\bcprov-jdk18on\\1.76\\3a785d0b41806865ad7e311162bfa3fa60b3965b\\bcprov-jdk18on-1.76.jar
+Launcher Type: SUN_STANDARD
+
+[Global flags]
+     intx CICompilerCount                          = 4                                         {product} {ergonomic}
+     uint ConcGCThreads                            = 3                                         {product} {ergonomic}
+     uint G1ConcRefinementThreads                  = 10                                        {product} {ergonomic}
+   size_t G1HeapRegionSize                         = 1048576                                   {product} {ergonomic}
+    uintx GCDrainStackTargetSize                   = 64                                        {product} {ergonomic}
+   size_t InitialHeapSize                          = 264241152                                 {product} {ergonomic}
+   size_t MarkStackSize                            = 4194304                                   {product} {ergonomic}
+   size_t MaxHeapSize                              = 536870912                                 {product} {command line}
+   size_t MinHeapDeltaBytes                        = 1048576                                   {product} {ergonomic}
+   size_t MinHeapSize                              = 8388608                                   {product} {ergonomic}
+    uintx NonNMethodCodeHeapSize                   = 5839372                                {pd product} {ergonomic}
+    uintx NonProfiledCodeHeapSize                  = 122909434                              {pd product} {ergonomic}
+    uintx ProfiledCodeHeapSize                     = 122909434                              {pd product} {ergonomic}
+    uintx ReservedCodeCacheSize                    = 251658240                              {pd product} {ergonomic}
+     bool SegmentedCodeCache                       = true                                      {product} {ergonomic}
+   size_t SoftMaxHeapSize                          = 536870912                              {manageable} {ergonomic}
+     bool UseCompressedOops                        = true                           {product lp64_product} {ergonomic}
+     bool UseG1GC                                  = true                                      {product} {ergonomic}
+     bool UseLargePagesIndividualAllocation        = false                                  {pd product} {ergonomic}
+
+Logging:
+Log output configuration:
+ #0: stdout all=warning uptime,level,tags foldmultilines=false
+ #1: stderr all=off uptime,level,tags foldmultilines=false
+
+Environment Variables:
+JAVA_HOME=C:\Program Files\Java\jdk-21
+PATH=C:\ProgramData\Oracle\Java\javapath;C:\Program Files\Common Files\Oracle\Java\javapath;C:\Program Files\Java\jdk-21\bin;C:\Tools\;C:\Tools\gradle-9.3.0\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\dotnet\;C:\Program Files\Git\cmd;C:\Program Files\nodejs\;C:\Program Files\NVIDIA Corporation\NVIDIA App\NvDLISR;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\Docker\Docker\resources\bin;C:\Python313\Scripts\;C:\Python313\;C:\Users\Ifbefine\AppData\Local\Microsoft\WindowsApps;C:\Program Files\JetBrains\PyCharm Community Edition 2025.2.1\bin;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2025.2.1\bin;C:\Users\Ifbefine\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Ifbefine\AppData\Roaming\npm
+USERNAME=Ifbefine
+OS=Windows_NT
+PROCESSOR_IDENTIFIER=Intel64 Family 6 Model 154 Stepping 3, GenuineIntel
+TMP=C:\Users\Ifbefine\AppData\Local\Temp
+TEMP=C:\Users\Ifbefine\AppData\Local\Temp
+
+
+
+
+Periodic native trim disabled
+
+---------------  S Y S T E M  ---------------
+
+OS:
+ Windows 11 , 64 bit Build 26100 (10.0.26100.7623)
+OS uptime: 0 days 13:08 hours
+Hyper-V role detected
+
+CPU: total 12 (initial active 12) (6 cores per cpu, 2 threads per core) family 6 model 154 stepping 3 microcode 0x424, cx8, cmov, fxsr, ht, mmx, 3dnowpref, sse, sse2, sse3, ssse3, sse4.1, sse4.2, popcnt, lzcnt, tsc, tscinvbit, avx, avx2, aes, erms, clmul, bmi1, bmi2, adx, sha, fma, vzeroupper, clflush, clflushopt, clwb, hv, serialize, rdtscp, rdpid, fsrm, f16c, cet_ibt, cet_ss
+Processor Information for processor 0
+  Max Mhz: 2000, Current Mhz: 1520, Mhz Limit: 2000
+Processor Information for processor 1
+  Max Mhz: 2000, Current Mhz: 2000, Mhz Limit: 2000
+Processor Information for processor 2
+  Max Mhz: 2000, Current Mhz: 2000, Mhz Limit: 2000
+Processor Information for processor 3
+  Max Mhz: 2000, Current Mhz: 2000, Mhz Limit: 2000
+Processor Information for processor 4
+  Max Mhz: 2000, Current Mhz: 2000, Mhz Limit: 2000
+Processor Information for processor 5
+  Max Mhz: 2000, Current Mhz: 2000, Mhz Limit: 2000
+Processor Information for processor 6
+  Max Mhz: 2000, Current Mhz: 2000, Mhz Limit: 2000
+Processor Information for processor 7
+  Max Mhz: 2000, Current Mhz: 2000, Mhz Limit: 2000
+Processor Information for processor 8
+  Max Mhz: 2000, Current Mhz: 2000, Mhz Limit: 2000
+Processor Information for processor 9
+  Max Mhz: 2000, Current Mhz: 2000, Mhz Limit: 2000
+Processor Information for processor 10
+  Max Mhz: 2000, Current Mhz: 1466, Mhz Limit: 2000
+Processor Information for processor 11
+  Max Mhz: 2000, Current Mhz: 2000, Mhz Limit: 2000
+
+Memory: 4k page, system-wide physical 16085M (2159M free)
+TotalPageFile size 32085M (AvailPageFile size 141M)
+current process WorkingSet (physical memory assigned to process): 13M, peak: 13M
+current process commit charge ("private bytes"): 64M, peak: 315M
+
+vm_info: Java HotSpot(TM) 64-Bit Server VM (21.0.6+8-LTS-188) for windows-amd64 JRE (21.0.6+8-LTS-188), built on 2024-12-03T10:50:54Z by "mach5one" with MS VC++ 17.6 (VS2022)
+
+END.

@@ -15,7 +15,7 @@ public class TestBase {
     protected WebDriver driver;
 
     @BeforeMethod
-    void setUp() {
+    public void setUp() {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.get("https://demowebshop.tricentis.com/");
@@ -24,7 +24,7 @@ public class TestBase {
     }
 
     @AfterMethod
-    void tearDown() {
+   public void tearDown() {
         if (driver != null) {
             driver.quit();
         }
@@ -37,8 +37,13 @@ return driver.findElements(locator).size()>0;
         driver.findElement(locator).clear();
         driver.findElement(locator).sendKeys(text);
     }
-    public void click(By locator){
+    public void click(By locator) {
         driver.findElement(locator).click();
+    }
+    public String newEmail(){
+        int i=(int) ((System.currentTimeMillis()/1000%3600));
+        String email="Vladimir" + i + "@.gmail.com";
+        return email;
     }
 
 }
